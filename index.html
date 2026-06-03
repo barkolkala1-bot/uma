@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reward App</title>
+
+    <!-- Monetag SDK -->
+    <script src='//libtl.com/sdk.js'
+            data-zone='11091665'
+            data-sdk='show_11091665'></script>
+</head>
+<body>
+
+    <h1>Welcome</h1>
+    <p>Click the button below to watch an ad and get a reward.</p>
+
+    <button onclick="watchAd()">
+        Watch Ad
+    </button>
+
+    <script>
+        function watchAd() {
+            show_11091665('pop')
+                .then(() => {
+                    alert("Reward Granted!");
+                    // Reward code here
+                })
+                .catch((e) => {
+                    alert("Ad not available. Try again later.");
+                    console.log(e);
+                });
+        }
+    </script>
+
+</body>
+</html>
