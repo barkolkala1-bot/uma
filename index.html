@@ -1,36 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Telegram Mini App</title>
 
-    <title>Reward App</title>
-
-    <!-- Monetag SDK -->
-    <script src='//libtl.com/sdk.js'
-            data-zone='11091665'
-            data-sdk='show_11091665'></script>
+    <script src="//libtl.com/sdk.js"
+            data-zone="11091665"
+            data-sdk="show_11091665">
+    </script>
 </head>
 <body>
 
     <h1>Welcome</h1>
-    <p>Click the button below to watch an ad and get a reward.</p>
+    <p>My Telegram Mini App</p>
 
-    <button onclick="watchAd()">
-        Watch Ad
+    <button onclick="showRewardedAd()">
+        Watch Ad & Get Reward
     </button>
 
     <script>
-        function watchAd() {
-            show_11091665('pop')
-                .then(() => {
-                    alert("Reward Granted!");
-                    // Reward code here
-                })
-                .catch((e) => {
-                    alert("Ad not available. Try again later.");
-                    console.log(e);
-                });
+        function showRewardedAd() {
+            show_11091665().then(() => {
+                alert("You have seen an ad!");
+            }).catch(() => {
+                alert("Ad not available right now.");
+            });
         }
     </script>
 
